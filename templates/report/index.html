@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %} Aplicacion Greport {% endblock title %}
+{% block container %}
+	<div id="mapa" class="capas"></div>
+	<div id="datos" class="capas">
+		<div id="form">
+			<form action="/report/save/" method="post" enctype="multipart/form-data" id="form_report">{% csrf_token %}
+				{{ form.as_p}}
+				<p>
+					<input type="submit" value="Guardar Reporte">
+				</p>
+			</form>
+		</div>
+		<div id="data">
+			<table>
+			{% for report in reports  %}
+				<tr>
+					<td>{{report.tag}}</td>
+					<td>{{report.nombre}}</td>
+					<td>{{report.descripcion}}</td>
+					<td>{{report.fecha}}</td>
+					<td>{{report.user}}</td>
+					<td>Hace {{report.fecha|timesince}}</td>
+				</tr>
+			{% empty %}
+				<tr>
+					<td>
+						<p>No hay Entradas.</p>
+					</td>
+				</tr>				
+			{% endfor %}
+			</table>
+		</div>
+	</div>
+{% endblock container %}
+
+{% block script_jquery %}
+<link href="{{ STATIC_URL }}ajax_upload/css/ajax-upload-widget.css" rel="stylesheet" type="text/css"/>
+<script src="{{ STATIC_URL }}ajax_upload/js/jquery.iframe-transport.js"></script>
+<script src="{{ STATIC_URL }}ajax_upload/js/ajax-upload-widget.js"></script>
+<script>
+    $(function() {
+        AjaxUploadWidget.autoDiscover({
+            changeButtonText: 'Seleccionar otro archivo',
+            onError: function(data) { alert('Error!'); }
+            // see source for full list of options
+        });
+        //alert('Hola');
+    });
+</script>    	
+    {% endblock script_jquery %}

@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<title>test</title>
+		<link rel="stylesheet" type="text/css" href="../static/css/styles.css">
+	</head>
+	<body>
+		<div id="form" class='capas'>
+			<form action="get">
+				<table>
+					<tr>
+						<td>Name</td>
+						<td><input type="text"></td>
+					</tr>
+					<tr>
+						<td>TTT</td>
+						<td><input type="text"></td>
+					</tr>
+					<tr>
+						<td>hola</td>
+						<td><input type="text"></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><input type="submit"></td>
+					</tr>
+				</table>				
+			</form>
+		</div>
+		<div id="datos">
+			<p>hola</p>
+		</div>
+		<div id="datos1">
+			<p>hola</p>
+		</div>
+
+		<button id='changing'>TESTING</button>
+
+	</body>
+	<script src='../static/js/jquery-1.10.2.min.js'></script>
+	<script>
+		$(document).ready(function() {
+			$("#changing").click(function() {
+				$("#form").toggle(1000);
+			});			
+		});
+	</script>
+</html>

@@ -1,0 +1,99 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>{% block title %} 	{% endblock title %}	</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<link rel="stylesheet" type="text/css" href="{% static "css/styles.css" %}">
+	<!-- Le styles -->
+	<link href="{% static "twbs/css/bootstrap.css" %}" rel="stylesheet">
+	<style type="text/css">
+		body { padding-top: 60px; padding-bottom: 40px; }
+	</style>
+	<link href="{% static "twbs/css/bootstrap-responsive.css" %}" rel="stylesheet">
+
+	<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Le fav and touch icons -->
+	<link rel="shortcut icon" href="{% static "twbs/images/favicon.ico" %}">
+	<link rel="apple-touch-icon" href="{% static "twbs/images/apple-touch-icon.png" %}">
+	<link rel="apple-touch-icon" sizes="72x72" href="{% static "twbs/images/apple-touch-icon-72x72.png" %}">
+	<link rel="apple-touch-icon" sizes="114x114" href="{% static "twbs/images/apple-touch-icon-114x114.png" %}">
+</head>
+<body>
+
+
+	<div class="container">
+		<!-- Main hero unit for a primary marketing message or call to action -->
+		<div class="hero-unit">
+			<h1>Hello, world!</h1>
+			<p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+			<p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+		</div>
+
+		<!-- Example row of columns -->
+		<div class="contenedor">
+			 {% block container %}
+			 	
+			 {% endblock container %}			
+		</div>
+		<hr>
+		<footer>
+			<p>&copy; 2013</p>
+		</footer>
+
+	</div> <!-- /container -->
+
+	<!-- Le javascript
+	================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<!--
+	<script src="{% static "js/jquery-1.10.2.js" %}"></script>
+-->
+	<script src="{% static "js/jquery-1.11.0-beta2.js" %}"></script>
+	<script src="{% static "twbs/js/bootstrap-transition.js" %}"></script>
+	<script src="{% static "twbs/js/bootstrap-alert.js" %}"></script>
+	<script src="{% static "twbs/js/bootstrap-modal.js" %}"></script>
+	<script src="{% static "twbs/js/bootstrap-dropdown.js" %}"></script>
+	<script src="{% static "twbs/js/bootstrap-scrollspy.js" %}"></script>
+	<script src="{% static "twbs/js/bootstrap-tab.js" %}"></script>
+	<script src="{% static "twbs/js/bootstrap-tooltip.js" %}"></script>
+	<script src="{% static "twbs/js/bootstrap-popover.js" %}"></script>
+	<script src="{% static "twbs/js/bootstrap-button.js" %}"></script>
+	<script src="{% static "twbs/js/bootstrap-collapse.js" %}"></script>
+	<script src="{% static "twbs/js/bootstrap-carousel.js" %}"></script>
+	<script src="{% static "twbs/js/bootstrap-typeahead.js" %}"></script>
+	<script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+	
+	
+	<script src="{% static "js/init.js" %}"></script>
+<!--
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+	 <script>
+var map;
+function initialize() {
+  var mapOptions = {
+    zoom: 8,
+    center: new google.maps.LatLng(-34.397, 150.644)
+  };
+  map = new google.maps.Map(document.getElementById('mapa'),
+      mapOptions);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
+    -->
+    {% block script_jquery %}
+    	
+    {% endblock script_jquery %}
+</body>
+</html>

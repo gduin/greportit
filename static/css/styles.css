@@ -1,0 +1,28 @@
+.capas{
+	height: 450px;
+	width: 430px;
+	border: 1px solid #000;
+	border-radius: 10px;
+
+	display: inline-block;
+	vertical-align: top;
+}
+.contenedor{
+	border: 1px solid #000;
+	border-radius: 10px;
+	height: 500px;
+	width: 900px;
+	margin: 0 auto;
+	padding: 5px;
+	text-align: center;
+	box-shadow: 0 0 50px #000;
+}
+#form{
+	border-bottom: 1px solid #000;
+	height: 250px;
+	text-align: left;
+}
+#data{
+	overflow: auto;
+	
+}
